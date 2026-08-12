@@ -13,9 +13,14 @@ int main(int argc, char** argv) {
     setenv("GODEBUG", "netdns=cgo", 1);
     setenv("SSL_CERT_FILE", "/data/data/com.termux/files/usr/etc/tls/cert.pem", 1);
 
-    // Sleek mobile-friendly compact banner header for Termux screens
-    if (argc == 1 && isatty(STDOUT_FILENO)) {
-        printf("\033[38;5;39m⚡ Freebuff AI Coding Assistant \033[38;5;244m(Termux Native)\033[0m\n\n");
+    // Enforce COLUMNS=80 if screen width is under 80 columns so full TUI logo fits without wrapping
+    struct winsize ws;
+    if (ioctl(STDOUT_FILENO, TIOCGWINSZ, &ws) == 0) {
+        if (ws.ws_col < 80) {
+            setenv("COLUMNS", "80", 1);
+        }
+    } else {
+        setenv("COLUMNS", "80", 1);
     }
 
     char real_bin[] = "/data/data/com.termux/files/home/.local/share/freebuff/freebuff";
