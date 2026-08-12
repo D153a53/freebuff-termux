@@ -1,0 +1,5 @@
+# Dependencies / Build outputs
+*.o
+*.tar.gz
+.local/
+EOF
