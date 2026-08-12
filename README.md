@@ -28,6 +28,26 @@ bash install.sh
 
 ---
 
+## 📋 Prerequisite & Dependency Installation Commands
+
+If you prefer installing all required dependencies manually before running the script:
+
+```bash
+# 1. Setup Storage Permission
+termux-setup-storage
+
+# 2. Update Termux package repositories
+pkg update && pkg upgrade -y
+
+# 3. Add the glibc repository
+pkg install -y glibc-repo
+
+# 4. Install all required packages
+pkg install -y glibc patchelf clang curl tar git
+```
+
+---
+
 ## 💻 Usage
 
 ```bash
