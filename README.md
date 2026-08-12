@@ -7,13 +7,13 @@ Native `freebuff` AI coding assistant installer for **Termux** on Android (No `p
 Run this single command in your Termux terminal to install:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/<YOUR-USERNAME>/freebuff-termux/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/D153a53/freebuff-termux/main/install.sh | bash
 ```
 
 Or from local directory:
 
 ```bash
-git clone https://github.com/<YOUR-USERNAME>/freebuff-termux.git
+git clone https://github.com/D153a53/freebuff-termux.git
 cd freebuff-termux
 bash install.sh
 ```
